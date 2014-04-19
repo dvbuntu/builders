@@ -7,11 +7,20 @@ class card:
     '''
     def __init__(self, name,
                  resources = defaultdict(int),
+                 cost = defaultdict(int),
                  prereq = None,
                  postreq = None,
                  era = 1):
         self.name = name
         self.resources = resources
+    def build(self, owner):
+        '''Attempt to build this card for the given player'''
+        for k,v in cost.items:
+            if owner.resources[k] >= v:
+                continue
+        finally:
+            self.owner = owner
+            owner.cards.append(self)
 
 def make_dollar_card(name, num_dollars):
     return card(name, defaultdict(int, ('dollars', num_dollars)))
