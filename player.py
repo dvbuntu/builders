@@ -8,4 +8,7 @@ class player:
     self.points = self.resources['points']
     def __init__(self, name, human = True):
         self.name = name
-        self.human = True
+        self.human = human
+    def set_neighbors(self, left, right):
+        self.left = left
+        self.right = right
